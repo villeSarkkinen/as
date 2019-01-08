@@ -1,28 +1,38 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { View, Text, TouchableHighlight, StyleSheet } from 'react-native';
 
 class App extends Component {
+  state = {
+    initialState: "This is initial state"
+  }
+
+  getToggledString = initialState => {
+    return initialState === "This is initial state" ? "Not initialState" : initialState;
+  }
+
+  handlePress = () => {
+    this.setState( prevState => ({
+      initialState: this.getToggledString(prevState.initialState)
+    }))
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <View><Text>{this.state.initialState}</Text>
+      <TouchableHighlight onPress={this.handlePress} style={styles.button} ><Text>Touch this</Text></TouchableHighlight>
+      </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  button: {
+    backgroundColor: 'red',
+    borderColor: 'black',
+    height: 50,
+    borderWidth: 1,
+    borderStyle: 'solid'
+  }
+})
 
 export default App;

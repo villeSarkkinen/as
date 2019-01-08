@@ -1,0 +1,4 @@
+#Mon Jan 07 19:41:40 EET 2019
+base.0=C\:\\Asiakasvastaavasparraus UI projekti\\testaus\\React\\rnw\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+path.0=classes.dex
+renamed.0=classes.dex
