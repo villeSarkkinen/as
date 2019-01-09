@@ -19,7 +19,7 @@ class App extends Component {
   render() {
     return (
       <View><Text>{this.state.initialState}</Text>
-      <TouchableHighlight onPress={this.handlePress} style={styles.button} ><Text>Touch this</Text></TouchableHighlight>
+      <TouchableHighlight onPress={this.handlePress} style={styles.button} ><Text>Tjj this</Text></TouchableHighlight>
       </View>
     );
   }
