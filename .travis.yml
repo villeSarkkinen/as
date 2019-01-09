@@ -1,6 +1,16 @@
-language: node_js
-node_js:
-  - node
+matrix:
+  include:
+    - language: node_js
+    script: 
+      - yarn start
 
-script:
-  - yarn build
+    - language: android
+      jdk: oraclejdk8
+      android:
+        components:
+          - tools
+          - android-25
+          - build-tools-27.0.3
+        before_script:
+          - cd android
+        script: ./gradlew build connectedCheck
