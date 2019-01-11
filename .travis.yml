@@ -1,10 +1,22 @@
-language: android
-jdk: oraclejdk8
-android:
-  components:
-    - tools
-    - android-25
-    - build-tools-27.0.3
-  before_script:
-    - cd android
-  script: ./gradlew build connectedCheck
+- stage: Test
+  language: node_js
+  node_js: 8
+  cache: 
+    - node_modules
+  install: yarn
+  script: 
+    - yarn test
+    - yarn build
+
+- stage: Adroid
+  language: android
+  jdk: oraclejdk8
+  android:
+    components:
+      - tools
+      - platform-tools
+      - android-26
+      - extra-google-m2repository
+      - extra-google-google-play-services
+  install: yarn
+  script: cd ./android && gradle build connectedCheck
