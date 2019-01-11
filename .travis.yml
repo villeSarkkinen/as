@@ -7,4 +7,4 @@ android:
     - android-26
     - extra-google-m2repository
     - extra-google-google-play-services
-script: cd ./android && gradle build connectedCheck
+script: cd ./android && ./gradlew build connectedCheck
