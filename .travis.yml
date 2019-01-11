@@ -1,13 +1,3 @@
-stage: Test
-  language: node_js
-  node_js: 8
-  cache: 
-    - node_modules
-  install: yarn
-  script: 
-    - yarn test
-    - yarn build
-
 stage: Adroid
   language: android
   jdk: oraclejdk8
