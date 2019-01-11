@@ -1,6 +1,6 @@
 language: android
 jdk: oraclejdk8
-node_js: node
+before_install: nvm node
 install: yarn
 android:
   components:
