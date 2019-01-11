@@ -9,4 +9,5 @@ android:
     - extra-google-google-play-services
 script: 
   - cd ./android
-  - chmod +x ./gradlew build connectedCheck
+  - chmod +x ./gradlew 
+  - ./gradlew build connectedCheck
