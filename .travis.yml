@@ -51,7 +51,11 @@ jobs:
       xcode_project: ./ios/build.xcodeproj
       xcode_scheme: buildProjectTests
       xcode_destination: platform=iOS Simulator, OS=10.1, name iPad Pro (9.7-inch)
-      before_install: nvm install node
+      before_install: 
+      - nvm install node
+      - npm -v
+      - yarn -v
+      - npm -g install yarn
       install: yarn
       script: 
         - cd ios
