@@ -54,7 +54,6 @@ jobs:
       before_install: 
       - nvm install node
       - npm -v
-      - yarn -v
       - npm -g install yarn
       install: yarn
       script: 
